@@ -8,6 +8,4 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<h1>Remote Blog</h1>
-
 {@render children()}
