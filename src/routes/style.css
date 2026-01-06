@@ -1,3 +1,11 @@
 label {
 	display: block;
 }
+
+a {
+	color: var(--white);
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+	}
+}
