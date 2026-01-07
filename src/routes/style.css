@@ -9,3 +9,8 @@ a {
 		text-decoration: underline;
 	}
 }
+
+.button,
+button {
+	display: inline-block;
+}
