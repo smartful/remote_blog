@@ -5,7 +5,7 @@
 	import { resolve } from '$app/paths';
 	import { get_user } from './user.remote';
 	import { authClient } from '$lib/auth-client';
-	import { goto } from '$app/navigation';
+	import { goto, onNavigate } from '$app/navigation';
 
 	let { children } = $props();
 
@@ -21,6 +21,17 @@
 			}
 		});
 	}
+
+	onNavigate((navigate) => {
+		if (!document.startViewTransition) return;
+
+		return new Promise((resolve) => {
+			document.startViewTransition(async () => {
+				resolve();
+				await navigate.complete;
+			});
+		});
+	});
 </script>
 
 <svelte:head>
